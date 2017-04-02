@@ -1,0 +1,121 @@
+body {
+  font-family: 'Roboto Slab', serif;
+  margin: 0; 
+  background-color: #581845;
+  }
+
+h1 {
+   color: #FF5733;
+   font-size: 3vw;
+   padding: 5rem;
+   font-weight: 800;
+   margin: 0;
+   background-color: black;
+   border-bottom: 1px dashed  #581845;
+   text-align: center;  
+}
+
+p {
+   margin: 5vh;
+   color: #FF5733;
+   border-bottom: 1px dashed #FF5733;
+   padding-bottom: 5vh;
+   text-align: center;
+}
+
+/*---slider---*/
+#carousel {
+  width: 600px;
+  height: 500px;
+  margin: 150px auto;
+  border: 5px solid black;
+  overflow: hidden;
+  list-style-type: none;
+  padding: 0;
+  position: relative;
+}
+
+#carousel ul {
+  padding: 0;
+  margin: 0;
+  width: 3060px;
+  border: 0;
+}
+
+#carousel li{
+  list-style-type: none;
+  display: inline-block; 
+  padding: 0; 
+  border: 0;
+}
+
+.buttons {
+  position: absolute;
+  top: 0;
+  color: red;
+  display: block;  
+}
+
+#btn-left {
+  position: absolute;
+  background: none;
+  border: 0;
+  color:white;
+  opacity: 0.7;
+  font-size:3em;
+  top: 250px;
+  left: 20px;
+  cursor: pointer;
+}
+
+#btn-right {
+  position: absolute;
+  background: none;
+  border: 0;
+  opacity: 0.7;
+  color: white;
+  font-size: 3em;
+  top: 250px;
+  left: 520px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dots {
+  position: absolute;
+  top: 90%;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.3);
+  text-align: center;
+  width: 600px; 
+}
+
+.dots ol {
+    padding:0;
+}
+
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 4px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.dot:hover {  
+    background-color: white;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.active {
+  background-color: white;
+}
+

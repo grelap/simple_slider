@@ -1,39 +1,44 @@
 $(document).ready(function(){
 
-   var carouselList = $("#carousel ul");
-   
-      function slideChangeNext(){
-         carouselList.animate({'marginLeft':-600}, firstSlideMove);
-      };
-      // setInterval(slideChangeNext, 5000);
-     
-      function firstSlideMove(){
-         var firstItem = carouselList.find("li:first");
-         var lastItem = carouselList.find("li:last");
-         lastItem.after(firstItem);
-         carouselList.css({marginLeft:0});
-     }; 
-    
-     function slideChangePrev(){
-         carouselList.animate({'marginLeft':600}, lastSlideMove);
-      };
-      
-    function lastSlideMove(){
-         var firstItem = carouselList.find("li:first");
-         var lastItem = carouselList.find("li:last");
-         firstItem.before(lastItem);
-         carouselList.css({marginLeft:0});     
-     };
+   var carousel = $("#carousel");
+   var carouselList = carousel.find("ul.photo");
+   var carouselMenu = carousel.find("ul.dots");
 
+	carouselList.find("li").each(function(){
+		carouselMenu.append('<li></li>');
+	});
 
-     $('#btn-right').click(function(){
-         console.log('kliknales prawy guzik');
-         slideChangeNext();
-     });
-     $('#btn-left').click(function(){
-         console.log('kliknales lewy guzik');
-         slideChangePrev();
+	var dots = carouselMenu.find("li");
+	dots.first().addClass("active");
+	
+	dots.click(function(){
+		if (!$(this).hasClass("active")){
+		var target = $(this).index();
+			console.log(target);
+			slideChange(target);
+		}	
+	});
+	
+	//zmiana slajdu
+	function slideChange(target){
+		carouselList.stop().animate({'left': -604 * target});
+		dots.removeClass("active").eq(target).addClass("active");
+	};
+	
+	//prawy guzik		
+   	$("#btn-right").click(function(){
+      target = dots.siblings(".active").index();
+      target == (dots.length - 1) ? target = 0 : target += 1;
+      	slideChange(target);
+			console.log('kliknales prawy guzik');
+   });
 
-     });
-
-});
+	//lewy guzik
+		$("#btn-left").click(function(){
+      target = dots.siblings(".active").index();
+      target == 0 ? target = (dots.length - 1) : target -= 1;
+      	slideChange(target);
+			console.log('kliknales lewy guzik');
+   });
+ 
+});	

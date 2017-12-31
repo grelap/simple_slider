@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-   var carousel = $("#carousel");
-   var carouselList = carousel.find("ul.photo");
-   var carouselMenu = carousel.find("ul.dots");
+  var carousel = $("#carousel");
+  var carouselList = carousel.find("ul.photo");
+  var carouselMenu = carousel.find("ul.dots");
 
   carouselList.find("li").each(function(){
     carouselMenu.append('<li></li>');

@@ -1,19 +1,19 @@
 $(document).ready(function(){
 
-  var carousel = $("#carousel");
-  var carouselList = carousel.find("ul.photo");
-  var carouselMenu = carousel.find("ul.dots");
+  let carousel = $("#carousel");
+  let carouselList = carousel.find("ul.photo");
+  let carouselMenu = carousel.find("ul.dots");
 
   carouselList.find("li").each(function(){
     carouselMenu.append('<li></li>');
   });
 
-  var dots = carouselMenu.find("li");
+  let dots = carouselMenu.find("li");
   dots.first().addClass("active");
 
   dots.click(function(){
     if (!$(this).hasClass("active")){
-    var target = $(this).index();
+      let target = $(this).index();
       console.log(target);
       slideChange(target);
     }

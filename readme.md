@@ -2,4 +2,4 @@
 
 demo:
 
-https://xenogonx.github.io/simple_slider/index.html
+https://grelap.github.io/simple_slider/index.html

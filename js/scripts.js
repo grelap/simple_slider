@@ -25,7 +25,7 @@ $(document).ready(function(){
     dots.removeClass("active").eq(target).addClass("active");
   };
 
-  //prawy guzik		
+  //prawy guzik
     $("#btn-right").click(function(){
       target = dots.siblings(".active").index();
       target == (dots.length - 1) ? target = 0 : target += 1;
